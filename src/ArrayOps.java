@@ -32,15 +32,33 @@ public class ArrayOps {
     }
 
     public static double[] reverse(double[] data) {
-        // ADD CODE HERE
+        int n = data.length;
+        double[] arr = new double[n];
+        for (int i = n - 1; i >= 0; i--){
+            arr[n - i - 1] = data[i];
+        }
+        return arr;
     }
 
     public static void reverseInPlace(double[] data) {
-        // ADD CODE HERE
+        int n = data.length;
+        int left = 0;
+        int right = n - 1;
+        double tmp;
+        while (left < right){
+            tmp = data[left];
+            data[left] = data[right];
+            data[right] = tmp;
+            left++;
+            right--;
+        }
     }
 
     public static void swap(double[] data1, double[] data2) {
-        // ADD CODE HERE
+        double[] tmp = new double[data1.length];
+        tmp = data1;
+        data1 = data2;
+        data2 = tmp;
     }
 
 }
